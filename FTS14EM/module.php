@@ -92,8 +92,7 @@
 
 
 
-$this->SendDebug ('receive', $JSONstring,0);
-
+$this->SendDebug ('receive', $JSONString,0);
 
 
 				$switch=$telegramAddr0[1];
