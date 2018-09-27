@@ -58,7 +58,7 @@
 		//$myaddr = $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
 		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
-		if ($myaddr1==0){$myaddr1="00";}
+		#if ($myaddr1==0){$myaddr1="00";}
 		switch ($myaddr2) {
 			case 10:
 			  $myaddr2="\x10";
@@ -88,7 +88,7 @@
 			$this->sendDebug("MyADDR-2M",$myaddr1,0);
 
 
-			$this->sendDebug("Data",$data,0);
+			$this->sendDebug("ADDR-Data",$data,0);
 		}	
 			//1004
 
