@@ -30,7 +30,7 @@
 	public function ApplyChanges()
 	{
 	  parent::ApplyChanges();
-	  $this->SetReceiveDataFilter("A5 5A 0B 05.*");	
+//	  $this->SetReceiveDataFilter("A5 5A 0B 05.*");	
 	  $this->SendDebug("FTS14",$this->GetConfigurationForParent(),0);
 	}
 
