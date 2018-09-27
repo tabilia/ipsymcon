@@ -39,7 +39,10 @@
 	
 	public function ReceiveData($JSONString) {
 		// Empfangene Daten vom I/O
+		echo "ok";
+
 		$data = json_decode($JSONString);
+		$this->LogMessage("ReceiveData aufgerufen", KL_DEBUG);
 		IPS_LogMessage("FTS14EM-ReceiveData", utf8_decode($data->Buffer));
         }
 
