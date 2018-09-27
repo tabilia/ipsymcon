@@ -99,7 +99,27 @@
 			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
 		) {
 			$telegramAddr0 = substr($data,11,1);
+			
 			$this->sendDebug("RD HEX",$telegramAddr0,0);
+			$help = $telegramAddr0 & 0xF0;
+			$help2 = $telegramAddr0 & 0xF0;
+			$this->sendDebug("RD HEX1",$help,0);
+			$this->sendDebug("RD HEX2",$help2,0);
+						
+/*
+ * 00000000 -> 0
+ * 00000001 -> 1
+ * 00000010 -> 2
+ * 00000011 -> 3
+ * 00000100 -> 4
+ * 00000101 -> 5
+ * 00000110 -> 6
+ * 00000111 -> 7
+ * 00001000 -> 8
+ * 00001001 -> 9
+ */ 
+			
+
 		/*		00
 				01
 				02
@@ -118,7 +138,12 @@
 				20
 				21
 			
-		*/	
+		 */
+
+			
+
+
+
 		//	if (($myaddr1 == 1 && $telegramAddr0 >= 0x00 && $telegramAddr0 < 0x10)
 				
 
@@ -135,15 +160,19 @@
 				break;
 				$this->sendDebug("RD SW","0",0);
 			case "\x10":
+				// SW3 + SW7
 				$this->sendDebug("RD SW","10",0);
 				break;
 			case "\x30":
 				$this->sendDebug("RD SW","30",0);
+				//SW2 + SW6
 				break;
 			case "\x50":
+				//SW1 + SW5 + SW9
 				$this->sendDebug("RD SW","50",0);
 				break;
 			case "\x70":
+				//SW0 + SW8
 				$this->sendDebug("RD SW","70",0);
 				break;
 			default:
