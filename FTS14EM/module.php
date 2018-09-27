@@ -78,7 +78,8 @@
 		}
 
 
-		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
+		if (substr($data,0,4)=="\xA5\x5A\x0B\x05")
+		{
 			$this->sendDebug("MyADDR1",$myaddr1,0);
 			$this->sendDebug("MyADDR2",$myaddr2,0);
 			$this->sendDebug("MyADDR-1S",substr($data,8,3),0);
