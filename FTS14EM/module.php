@@ -54,7 +54,6 @@
 
 
   }
-?>
 
 /* Beispieltelegram:
  *
@@ -90,4 +89,5 @@ wird ein Telegramm mit der jeweiligen ID und Data_byte3 = 0x00 erzeugt.
 Data_byte2 = not used (0x00)
 Data_byte1 = not used (0x00)
 Data_byte0 = not used (0x00)
-*/
+ */
+?>
