@@ -34,7 +34,7 @@
 	  parent::ApplyChanges();
 //	  $this->SetReceiveDataFilter(".*");	
 	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
-	  $this->SendDebug("FTS14","applaychanges".$this->GetConfigurationForParent(),0);
+	  $this->SendDebug("FTS14","applychanges".$this->GetConfigurationForParent(),0);
 	}
 
 
@@ -44,8 +44,8 @@
 		// Empfangene Daten vom I/O
 
 		$data = json_decode($JSONString);
-		$this->SendDebug("->","ReceiveData aufgerufen", 0);
-		IPS_LogMessage("FTS14EM-ReceiveData", utf8_decode($data->Buffer));
+		$this->SendDebug("FTS14EM RD","ReceiveData aufgerufen", 0);
+		IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
 		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 		
 
