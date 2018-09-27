@@ -6,7 +6,7 @@
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
 	  $this->RegisterPropertyInteger("UpperRotarySwitch", 0);
-	  $this->RegisterPropertyInteger("LowerRotarySwitch", 0);
+	  $this->RegisterPropertyInteger("LowerRotarySwitch", 1);
 	  $this->RegisterPropertyInteger("SwitchType", 0);
 	  $this->RegisterPropertyInteger("PropertyInstanceID", 0);
 	  
@@ -52,6 +52,12 @@
 
 
 		$data=utf8_decode($data->Buffer);
+
+	
+
+		$myaddr=1000 + $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
+		$this->sendDebug("MyADDR",$myaddr,0);
+		
 
 		if (substr($data,0,4)=="\xA5\x5A\x0B\x05") {
 			// TODO prüfen ob für mich
