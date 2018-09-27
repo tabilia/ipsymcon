@@ -23,10 +23,9 @@
 	  $this->RegisterVariableBoolean("Switch9","Switch9");
 
 
-	
 	  #$this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
-	  $this->ConnectParent("{018EF6B5-AB94-40C6-AA53-46943E824ACF}");
-	  $this->SendDebug("test","12332",0);
+	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
+	
 	}
 
 
