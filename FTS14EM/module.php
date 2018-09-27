@@ -48,14 +48,14 @@
 		#IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
 		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 
-		//$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
-		//$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
 
 		$data=utf8_decode($data->Buffer);
 
 		if (substr($data,0,4)=="\xA5\x5A\x0B\x05") {
 			// TODO prüfen ob für mich
-			
+
+			$this->sendDebug("RD-ADDR",substr($data,8,4),0);
+
 			$this->SendDebug("RD-Start","0xA55A",0);
 			switch (substr($data,4,1)) {
 
