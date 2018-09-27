@@ -7,7 +7,7 @@
 	  // erzeugt benötigte variablen etc.
 	  $this->RegisterPropertyInteger("DeviceID", 0);
 	  	
-      	# $this->RegisterPropertyBoolean("Switch0", false);
+      	  $this->RegisterVariableBoolean("Switch0", false);
 	}
 
 
