@@ -5,9 +5,11 @@
 	{
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
-	  $this->RegisterPropertyInteger("DeviceID", 0);
 	  #$this->RequireParent("{018EF6B5-AB94-40C6-AA53-46943E824ACF}");	
-   	  $this->RequireParent("{48909406-A2B9-4990-934F-28B9A80CD079}");
+	  $this->RegisterPropertyInteger("DeviceID", 0);
+	  $this->RegisterPropertyInteger("PropertyInstanceID", 0);
+	  
+	  $this->RequireParent("{48909406-A2B9-4990-934F-28B9A80CD079}");
 
       	  $this->RegisterVariableBoolean("Switch0","Switch0");
       	  $this->RegisterVariableBoolean("Switch1","Switch1");
