@@ -90,6 +90,12 @@ $this->sendDebug("ALL DATA",$data,0);
 			// hinteren Adressteil prüfen
 			if ($myaddr1 == $telegramAddr[0]) {
 
+
+
+SendDebug ('receive', $JSONstring,0);
+
+
+
 				$switch=$telegramAddr0[1];
 				
 				switch (substr($data,4,1)) {
