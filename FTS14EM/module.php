@@ -51,7 +51,7 @@
 		$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
 		$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
 		
-		if (substr($data->Buffer,0,2)==0xA55A) {
+		if (substr($data->Buffer,0,2)=="\xA5\x5A") {
 			$this->SendDebug("RD-Start","0xA55A",0);
 			
 		}
