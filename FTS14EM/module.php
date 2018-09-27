@@ -85,7 +85,7 @@
 				switch (substr($data,4,1)) {
 	
 					case "\x00":
-						$this->sendDebug("RD SW","0",0);
+						$this->sendDebug("RD SW","0  / SW ".$switch,0);
 						break;
 					case "\x10":
 					// SW4 + SW8
