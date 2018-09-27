@@ -118,26 +118,28 @@ $help1=$telegramAddr0[0];*/
 					$this->sendDebug("RD SW","0",0);
 				case "\x10":
 					// SW3 + SW7
-					$this->sendDebug("RD SW","10",0);
-					if ($switch==3) { SetValueBoolean($this->GetIDForIdent("Switch2"), true);}
-					else if ($switch==7) { SetValueBoolean($this->GetIDForIdent("Switch6"), true);}
+					$this->sendDebug("RD SW","10 / Switch ".$switch,0);
+					if ($switch==3) { SetValueBoolean($this->GetIDForIdent("Switch3"), true);}
+					else if ($switch==7) { SetValueBoolean($this->GetIDForIdent("Switch7"), true);}
 					break;
 				case "\x30":
-					$this->sendDebug("RD SW","30",0);
+					$this->sendDebug("RD SW","30 / Switch ".$switch,0);
 					//SW2 + SW6
-					if ($switch==2) { SetValueBoolean($this->GetIDForIdent("Switch1"), true);}
-					else if ($switch==6) { SetValueBoolean($this->GetIDForIdent("Switch5"), true);}
+					if ($switch==2) { SetValueBoolean($this->GetIDForIdent("Switch2"), true);}
+					else if ($switch==6) { SetValueBoolean($this->GetIDForIdent("Switch6"), true);}
 					break;
 				case "\x50":
 					//SW1 + SW5 + SW9
-					$this->sendDebug("RD SW","50",0);
-					if ($switch==1) { SetValueBoolean($this->GetIDForIdent("Switch0"), true);}
-					else if ($switch==5) { SetValueBoolean($this->GetIDForIdent("Switch4"), true);}
-					else if ($switch==9) { SetValueBoolean($this->GetIDForIdent("Switch8"), true);}
+					$this->sendDebug("RD SW","50 / SW ".$switch,0);
+					if ($switch==1) { SetValueBoolean($this->GetIDForIdent("Switch1"), true);}
+					else if ($switch==5) { SetValueBoolean($this->GetIDForIdent("Switch5"), true);}
+					else if ($switch==9) { SetValueBoolean($this->GetIDForIdent("Switch9"), true);}
 					break;
 				case "\x70":
 					//SW0 + SW8
-					$this->sendDebug("RD SW","70",0);
+					$this->sendDebug("RD SW","70 / Switch ".$switch,0);
+					if ($switch==0) { SetValueBoolean($this->GetIDForIdent("Switch0"), true);}
+					else if ($switch==8) { SetValueBoolean($this->GetIDForIdent("Switch8"), true);}
 					break;
 				default:
 					$this->sendDebug("RD SW Def",substr($data,4,1),0);
