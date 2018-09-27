@@ -6,7 +6,7 @@
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
 	  $this->RegisterPropertyInteger("UpperRotarySwitch", 0);
-	  $this->RegisterPropertyInteger("LowerRotarySwitch", 1);
+	  $this->RegisterPropertyInteger("LowerRotarySwitch", 0);
 	  $this->RegisterPropertyInteger("SwitchType", 0);
 	  $this->RegisterPropertyInteger("PropertyInstanceID", 0);
 	  
@@ -55,11 +55,20 @@
 
 	
 
-		$myaddr=1000 + $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
-		$this->sendDebug("MyADDR",$myaddr,0);
+		//$myaddr = $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
+		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
+		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
 		
+		$this->sendDebug("MyADDR1",$myaddr1,0);
+		$this->sendDebug("MyADDR1",$myaddr2,0);
 
-		if (substr($data,0,4)=="\xA5\x5A\x0B\x05") {
+		//1004
+
+		// Enocean Switch Message for one of my Addresses
+		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
+			&& (substr($data,8,3) =="\x00\x00\x".$myaddr1)
+
+			) {
 			// TODO prüfen ob für mich
 
 			$this->sendDebug("RD-ADDR",substr($data,8,4),0);
