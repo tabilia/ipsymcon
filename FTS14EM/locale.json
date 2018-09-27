@@ -1,7 +1,6 @@
 {
    "translations": {
 	"de": {
-		"DeviceID" : "Geräte-ID",
   		"Upper Rotary Switch" : "Oberer Drehschalter",
 	        "Lower Rotary Switch" : "Unterer Drehschalter"	
 	}

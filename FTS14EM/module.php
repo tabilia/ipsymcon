@@ -5,7 +5,8 @@
 	{
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
-	  $this->RegisterPropertyInteger("DeviceID", 0);
+	  $this->RegisterPropertyInteger("UpperRotarySwitch", 0);
+	  $this->RegisterPropertyInteger("LowerRotarySwitch", 0);
 	  $this->RegisterPropertyInteger("PropertyInstanceID", 0);
 	  
 

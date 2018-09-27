@@ -1,14 +1,22 @@
 {
 	"elements":
 	[
-		{ 
-			"name": "DeviceID", 
-			"type": "NumberSpinner", 
-			"caption": "DeviceID"
-		},
 		{
 			"name": "upperRotarySwitch",
-			"type": "NumberSpinner",
+			"type": "Select",
+			"options" : [
+				{"caption" : "0","value": 0 },
+				{"caption" : "10","value": 10 },
+				{"caption" : "20","value": 20 },
+				{"caption" : "30","value": 30 },
+				{"caption" : "40","value": 40 },
+				{"caption" : "50","value": 50 },
+				{"caption" : "60","value": 60 },
+				{"caption" : "70","value": 70 },
+				{"caption" : "80","value": 80 },
+				{"caption" : "90","value": 90 },
+
+			],
 			"caption": "Upper Rotary Switch"
 		},
 		{
