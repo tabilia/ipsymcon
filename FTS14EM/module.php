@@ -23,10 +23,10 @@
 	  $this->RegisterVariableBoolean("Switch9","Switch9");
 
 
-	  $this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
-
+	
+	  #$this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
+	  $this->ConnectParent("{018EF6B5-AB94-40C6-AA53-46943E824ACF}");
 	  $this->SendDebug("test","12332",0);
-	  $this->SendDebug("FTS14",$this->GetConfigurationForParent(),0);
 	}
 
 
@@ -35,7 +35,9 @@
 	{
 	  parent::ApplyChanges();
 		$this->LogMessage("bla",KL_DEBUG);	
-	  $this->RequireParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
+	  #$this->RequireParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
+	
+	  $this->SendDebug("FTS14",$this->GetConfigurationForParent(),0);
 	}
 
 	
