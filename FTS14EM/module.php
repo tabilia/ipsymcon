@@ -59,10 +59,29 @@
 		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
 		if ($myaddr1==0){$myaddr1="00";}
+		switch ($myaddr2) {
+			case 10:
+			  $myaddr2="\x10";
+			  break;
+			case 11:
+			  $myaddr2="\x11";
+			  break;
+			case 11:
+			  $myaddr2="\x12";
+			  break;
+			case 13:
+			  $myaddr2="\x13";
+			  break;
+			case 14:
+			  $myaddr2="\x14";
+			  break;
+		}
+
+
 		$this->sendDebug("MyADDR1",$myaddr1,0);
 		$this->sendDebug("MyADDR2",$myaddr2,0);
 		$this->sendDebug("MyADDR-S",substr($data,8,3),0);
-		$this->sendDebug("MyADDR-M","\x00\x00\x".$myaddr2,0);
+		$this->sendDebug("MyADDR-M","\x00\x00".$myaddr2,0);
 		//1004
 
 		// Enocean Switch Message for one of my Addresses
