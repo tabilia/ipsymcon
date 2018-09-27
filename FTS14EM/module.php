@@ -61,12 +61,13 @@
 		if ($myaddr1==0){$myaddr1="00";}
 		$this->sendDebug("MyADDR1",$myaddr1,0);
 		$this->sendDebug("MyADDR2",$myaddr2,0);
-
+		$this->sendDebug("MyADDR-S",substr($data,8,3),0);
+		$this->sendDebug("MyADDR-M","\x00\x00\x".$myaddr2,0);
 		//1004
 
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
-			&& (substr($data,8,3) =="\x00\x00\x".$myaddr2)
+			&& (substr($data,8,3) == "\x00\x00\x".$myaddr2)
 
 			) {
 			// TODO prüfen ob für mich
