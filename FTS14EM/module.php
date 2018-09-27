@@ -6,7 +6,7 @@
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
 	  $this->RegisterPropertyInteger("DeviceID", 0);
-	  $this->RequireParent("{018EF6B5-AB94-40C6-AA53-46943E824ACF}");	
+	  #$this->RequireParent("{018EF6B5-AB94-40C6-AA53-46943E824ACF}");	
    	  #$this->RequireParent("{52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
 
       	  $this->RegisterVariableBoolean("Switch0","Switch0");
