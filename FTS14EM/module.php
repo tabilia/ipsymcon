@@ -1,6 +1,13 @@
 <?
   class FTS14EM extends IPSModule
   {
-	echo "test";
+	public function Create()
+	{
+	  parent::Create();
+	  // erzeugt benötigte variablen etc.
+	  $this->RegisterPropertyInteger("EnOceanID", 0);
+	}
+
+
   }
 ?>
