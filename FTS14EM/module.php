@@ -57,7 +57,7 @@
 			// TODO prüfen ob für mich
 			
 			$this->SendDebug("RD-Start","0xA55A",0);
-			switch substr($data,0,5) {
+			switch (substr($data,0,5)) {
 
 			case "\x00":
 				break;
@@ -74,10 +74,7 @@
 			case "\x70":
 				$this->sendDebug("RD SW","70",0);
 				break;
-			
-				
 			}
-			
 		}
 	}
 
