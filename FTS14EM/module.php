@@ -58,7 +58,6 @@
 		//$myaddr = $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
 		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
-		#if ($myaddr1==0){$myaddr1="00";}
 		switch ($myaddr2) {
 			case 10:
 			  $myaddr2="\x10";
@@ -90,19 +89,19 @@
 
 			$this->sendDebug("ADDR-Data",$data,0);
 		}	
-			//1004
-
-		
 
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
 			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
 		) {
-			$telegramAddr0 = substr($data,11,1);
+			$telegramAddr0 = bin2hex(substr($data,11,1));
 			
 			$this->sendDebug("RD HEX",$telegramAddr0,0);
-			$help1 = hexdec(($telegramAddr0 >>4) & 0x0f);
-			$help2 = hexdec($telegramAddr0 & 0x0f);
+			
+			$help1=$telegramAddr[0];
+			$help2=$telegramAddr[1];
+			//$help1 = hexdec(($telegramAddr0 >>4) & 0x0f);
+			//$help2 = hexdec($telegramAddr0 & 0x0f);
 			$this->sendDebug("RD HEX1",$help1,0);
 			$this->sendDebug("RD HEX2",$help2,0);
 						
