@@ -60,7 +60,7 @@
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
 		
 		$this->sendDebug("MyADDR1",$myaddr1,0);
-		$this->sendDebug("MyADDR1",$myaddr2,0);
+		$this->sendDebug("MyADDR2",$myaddr2,0);
 
 		//1004
 
