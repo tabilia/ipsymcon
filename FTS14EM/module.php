@@ -5,7 +5,8 @@
 	{
 	  parent::Create();
 	  // erzeugt benötigte variablen etc.
-	  $this->RegisterPropertyInteger("EnOceanID", 0);
+	  $this->RegisterPropertyInteger("DeviceId", 0);
+	   $this->RegisterPropertyBoolean("Switch0", false);
 	}
 
 
