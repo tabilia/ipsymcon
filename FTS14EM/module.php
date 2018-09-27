@@ -77,7 +77,7 @@
 		}
 
 
-		if (substr($data,0,4)=="\xA5\x5A\x0B\x05")
+		/*if (substr($data,0,4)=="\xA5\x5A\x0B\x05")
 		{
 			$this->sendDebug("MyADDR1",$myaddr1,0);
 			$this->sendDebug("MyADDR2",$myaddr2,0);
@@ -89,94 +89,60 @@
 
 			$this->sendDebug("ADDR-Data",$data,0);
 		}	
-
+		 */
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
 			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
 		) {
 			$telegramAddr0 = bin2hex(substr($data,11,1));
-			
-			$this->sendDebug("RD HEX",$telegramAddr0,0);
-			
-			$help1=$telegramAddr0[0];
-			$help2=$telegramAddr0[1];
-			//$help1 = hexdec(($telegramAddr0 >>4) & 0x0f);
-			//$help2 = hexdec($telegramAddr0 & 0x0f);
-			$this->sendDebug("RD HEX1",$help1,0);
-			$this->sendDebug("RD HEX2",$help2,0);
-						
+			// hinteren Adressteil prüfen
+			if ($myaddr1 == $telegramAddr[0]) {
+
 /*
- * 00000000 -> 0
- * 00000001 -> 1
- * 00000010 -> 2
- * 00000011 -> 3
- * 00000100 -> 4
- * 00000101 -> 5
- * 00000110 -> 6
- * 00000111 -> 7
- * 00001000 -> 8
- * 00001001 -> 9
- */ 
+				$this->sendDebug("RD HEX",$telegramAddr0,0);
 			
-
-		/*		00
-				01
-				02
-				03
-				04
-				05
-				06
-				07
-				08
-				09
-				10
-				11
-				12
-				13
-				14
-				20
-				21
-			
-		 */
-
+$help1=$telegramAddr0[0];*/
+				$switch=$telegramAddr0[1];
+			/*	$this->sendDebug("RD HEX1",$help1,0);
+				$this->sendDebug("RD HEX2",$help2,0);
+ */						
 			
 
 
 
-		//	if (($myaddr1 == 1 && $telegramAddr0 >= 0x00 && $telegramAddr0 < 0x10)
-				
-
-			
-			// TODO prüfen ob oberer drehschalter und adresse passen
-
-			
-
-
-			$this->SendDebug("RD-Start","0xA55A",0);
-			switch (substr($data,4,1)) {
-
-			case "\x00":
-				break;
-				$this->sendDebug("RD SW","0",0);
-			case "\x10":
-				// SW3 + SW7
-				$this->sendDebug("RD SW","10",0);
-				break;
-			case "\x30":
-				$this->sendDebug("RD SW","30",0);
-				//SW2 + SW6
-				break;
-			case "\x50":
-				//SW1 + SW5 + SW9
-				$this->sendDebug("RD SW","50",0);
-				break;
-			case "\x70":
-				//SW0 + SW8
-				$this->sendDebug("RD SW","70",0);
-				break;
-			default:
-				$this->sendDebug("RD SW Def",substr($data,4,1),0);
-				break;
+				$this->SendDebug("RD-Start","0xA55A",0);
+				switch (substr($data,4,1)) {
+	
+				case "\x00":
+					break;
+					$this->sendDebug("RD SW","0",0);
+				case "\x10":
+					// SW3 + SW7
+					$this->sendDebug("RD SW","10",0);
+					if ($switch==3) { SetValueBoolean($this->GetIDForIdent("Switch2"), true);}
+					else if ($switch==7) { SetValueBoolean($this->GetIDForIdent("Switch6"), true);}
+					break;
+				case "\x30":
+					$this->sendDebug("RD SW","30",0);
+					//SW2 + SW6
+					if ($switch==2) { SetValueBoolean($this->GetIDForIdent("Switch1"), true);}
+					else if ($switch==6) { SetValueBoolean($this->GetIDForIdent("Switch5"), true);}
+					break;
+				case "\x50":
+					//SW1 + SW5 + SW9
+					$this->sendDebug("RD SW","50",0);
+					if ($switch==1) { SetValueBoolean($this->GetIDForIdent("Switch0"), true);}
+					else if ($switch==5) { SetValueBoolean($this->GetIDForIdent("Switch4"), true);}
+					else if ($switch==9) { SetValueBoolean($this->GetIDForIdent("Switch8"), true);}
+					break;
+				case "\x70":
+					//SW0 + SW8
+					$this->sendDebug("RD SW","70",0);
+					break;
+				default:
+					$this->sendDebug("RD SW Def",substr($data,4,1),0);
+					break;
+				}
 			}
 		}
 	}
