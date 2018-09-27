@@ -48,7 +48,10 @@
 		#IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
 		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 		
-
+		if ($data->Buffer[0]=="0xA5") {
+			$this->SendDebug("RD-Start","0xA5",0);
+			
+		}
 	}
 
 
