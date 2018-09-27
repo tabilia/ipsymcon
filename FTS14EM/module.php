@@ -15,13 +15,9 @@
 	public function ApplyChanges()
 	{
 	  parent::ApplyChanges();
-	  $this->RegisterPropertyInteger("DeviceID",0);
 	}
 
 	
-	public function Update()
-	{
-	}
 
   }
 ?>
