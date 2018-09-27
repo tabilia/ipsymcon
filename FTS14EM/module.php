@@ -25,6 +25,8 @@
 
 	  $this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
 
+
+	  IPS_LogMessage("FTS14",$this->GetConfigurationForParent());
 	}
 
 
