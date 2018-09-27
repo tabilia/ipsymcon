@@ -48,8 +48,8 @@
 		#IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
 		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 
-		$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
-		$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
+		//$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
+		//$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
 
 		$data=utf8_decode($data->Buffer);
 
@@ -57,7 +57,7 @@
 			// TODO prüfen ob für mich
 			
 			$this->SendDebug("RD-Start","0xA55A",0);
-			switch (substr($data,0,5)) {
+			switch (substr($data,4,1)) {
 
 			case "\x00":
 				break;
