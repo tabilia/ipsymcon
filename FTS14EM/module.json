@@ -1,0 +1,13 @@
+": "{89625B8F-7F45-4D21-9442-9EEC3CAC4A2D}",
+	"name": "FTS14EM",
+	"type": 3,
+	"vendor": "Eltako",
+	"aliases": 
+	[
+		"FTS14-EM"
+	],
+	"parentRequirements": [],
+	"childRequirements": [],
+	"implemented": [],
+	"prefix": "FTS"
+	}
