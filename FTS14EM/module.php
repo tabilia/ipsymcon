@@ -98,8 +98,8 @@
 			
 			$this->sendDebug("RD HEX",$telegramAddr0,0);
 			
-			$help1=$telegramAddr[0];
-			$help2=$telegramAddr[1];
+			$help1=$telegramAddr0[0];
+			$help2=$telegramAddr0[1];
 			//$help1 = hexdec(($telegramAddr0 >>4) & 0x0f);
 			//$help2 = hexdec($telegramAddr0 & 0x0f);
 			$this->sendDebug("RD HEX1",$help1,0);
