@@ -96,12 +96,11 @@
 
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
-			&& (substr($data,8,3) == "\x00\x00\x".$myaddr2)
+			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
 
 			) {
 			// TODO prüfen ob für mich
 
-			$this->sendDebug("RD-ADDR",substr($data,8,4),0);
 
 			$this->SendDebug("RD-Start","0xA55A",0);
 			switch (substr($data,4,1)) {
