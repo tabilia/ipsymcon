@@ -26,7 +26,7 @@
 	  $this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
 
 	  $this->SendDebug("test","12332",0);
-	  IPS_LogMessage("FTS14",$this->GetConfigurationForParent());
+	  $this->SendDebug("FTS14",$this->GetConfigurationForParent(),0);
 	}
 
 
