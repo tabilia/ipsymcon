@@ -46,7 +46,10 @@
 		$data = json_decode($JSONString);
 		$this->LogMessage("ReceiveData aufgerufen", KL_DEBUG);
 		IPS_LogMessage("FTS14EM-ReceiveData", utf8_decode($data->Buffer));
-		SetValue($this->GetIDForIdent("Switch0"), $data->Buffer);
+		SetValue($this->GetIDForIdent("Switch0"), true);
+		$this->SendDebug("ReceiveData","yeah",0)
+
+
 	}
 
 
