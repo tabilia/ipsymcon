@@ -32,7 +32,7 @@
 	public function ApplyChanges()
 	{
 	  parent::ApplyChanges();
-	
+		$this->LogMessage("bla",KL_DEBUG);	
 	  $this->RequireParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
 	}
 
