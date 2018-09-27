@@ -78,11 +78,20 @@
 		}
 
 
-		$this->sendDebug("MyADDR1",$myaddr1,0);
-		$this->sendDebug("MyADDR2",$myaddr2,0);
-		$this->sendDebug("MyADDR-S",substr($data,8,3),0);
-		$this->sendDebug("MyADDR-M","\x00\x00".$myaddr2,0);
-		//1004
+		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
+			$this->sendDebug("MyADDR1",$myaddr1,0);
+			$this->sendDebug("MyADDR2",$myaddr2,0);
+			$this->sendDebug("MyADDR-1S",substr($data,8,3),0);
+			$this->sendDebug("MyADDR-1M","\x00\x00".$myaddr2,0)i;
+			$this->sendDebug("MyADDR-2S",substr($data,12,1),0);
+			$this->sendDebug("MyADDR-2M",$myaddr1,0);
+
+
+			$this->sendDebug("Data",$data,0);
+		}	
+			//1004
+
+		
 
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
