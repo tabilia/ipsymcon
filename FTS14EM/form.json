@@ -1,6 +1,10 @@
 {
 	"elements":
 	[
-		{ "name": "EnOceanID", "type": "SelectVariable", "caption": "Source" }
+		{ 
+			"name": "DeviceID", 
+			"type": "NumberSpinner", 
+			"caption": "DeviceID"
+		}
 	]
 }
