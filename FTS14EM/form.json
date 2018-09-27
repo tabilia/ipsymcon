@@ -5,6 +5,10 @@
 			"name": "DeviceID", 
 			"type": "NumberSpinner", 
 			"caption": "DeviceID"
-		}
+		},
+		{ 
+			"type": "SelectInstance", 
+			"name": "PropertyInstanceID", 
+			"caption": "Target" }i
 	]
 }
