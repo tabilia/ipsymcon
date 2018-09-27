@@ -51,7 +51,7 @@
 		$data = json_decode($JSONString);
 		//$this->SendDebug("FTS14EM RD","ReceiveData aufgerufen", 0);
 		#IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
-		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
+	//	$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 
 
 		$data=utf8_decode($data->Buffer);
