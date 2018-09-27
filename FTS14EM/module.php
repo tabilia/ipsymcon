@@ -101,8 +101,8 @@
 			$telegramAddr0 = substr($data,11,1);
 			
 			$this->sendDebug("RD HEX",$telegramAddr0,0);
-			$help1 = ($telegramAddr0 >>4) & 0x0f;
-			$help2 = $telegramAddr0 & 0x0f;
+			$help1 = hexdec(($telegramAddr0 >>4) & 0x0f);
+			$help2 = hexdec($telegramAddr0 & 0x0f);
 			$this->sendDebug("RD HEX1",$help1,0);
 			$this->sendDebug("RD HEX2",$help2,0);
 						
