@@ -1,0 +1,13 @@
+{
+	    "id": "{8cf5cca0-7ee2-47c9-8778-c2f9ce9ca1aa}",
+	    "author": "Samuel Steenbreker",
+	    "name": "Eltako FTS14-EM Modul",
+	    "url": "www.symcon.de",
+	    "compatibility": {
+	           "version": "4.2",
+	           "date": 1491343200
+	    },
+	    "version": "0.1",
+	    "build": 0,
+	    "date": 0
+}
