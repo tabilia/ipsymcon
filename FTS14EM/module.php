@@ -42,6 +42,7 @@
 
 	private function SetSwitch($switchid) {
 		$switchid--;
+		$this->sendDebug("SW","Set SW ".$switch." = true ",0)
 		SetValueInteger($this->GetIDForIdent("switch".$switchid), true);
 	}
 	
