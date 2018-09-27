@@ -61,7 +61,7 @@
 
 		$data = json_decode($JSONString);
 		$data=utf8_decode($data->Buffer);
-$this->sendDebug("ALL DATA",$data,0);	
+//$this->sendDebug("ALL DATA",$data,0);	
 		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
 		switch ($myaddr2) {
@@ -92,7 +92,7 @@ $this->sendDebug("ALL DATA",$data,0);
 
 
 
-SendDebug ('receive', $JSONstring,0);
+$this->SendDebug ('receive', $JSONstring,0);
 
 
 
