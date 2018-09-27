@@ -1,7 +1,6 @@
 {
 	"elements":
 	[
-		{ "name": "EnOceanID", "type": "SelectVariable", "caption": "Source" },
-		{ "name": "EnOceanSplitter", "type": "NumberSpinner", "caption": "Pulses" },
+		{ "name": "EnOceanID", "type": "SelectVariable", "caption": "Source" }
 	]
 }
