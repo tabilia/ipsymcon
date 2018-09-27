@@ -97,9 +97,46 @@
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
 			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
+		) {
+			$telegramAddr0 = substr($data,11,1);
+			$this->sendDebug("RD HEX",$telegramAddr0,0);
+		/*		00
+				01
+				02
+				03
+				04
+				05
+				06
+				07
+				08
+				09
+				10
+				11
+				12
+				13
+				14
+				20
+				21
+			
+		*/	
+		//	if (($myaddr1 == 1 && $telegramAddr0 >= 0x00 && $telegramAddr0 < 0x10)
+				
 
-			) {
-			// TODO prüfen ob für mich
+			
+			// TODO prüfen ob oberer drehschalter und adresse passen
+					10
+					20
+					30
+					40
+					50
+					60
+					70
+					80
+					90
+					100
+
+
+			
 
 
 			$this->SendDebug("RD-Start","0xA55A",0);
@@ -119,6 +156,9 @@
 				break;
 			case "\x70":
 				$this->sendDebug("RD SW","70",0);
+				break;
+			default:
+				$this->sendDebug("RD SW Def",substr($data,4,1),0);
 				break;
 			}
 		}
