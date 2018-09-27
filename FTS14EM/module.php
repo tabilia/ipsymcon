@@ -50,9 +50,33 @@
 
 		$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
 		$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
-		
-		if (substr(utf8_decode($data->Buffer),0,2)=="\xA5\x5A") {
+
+		$data=utf8_decode($data->Buffer);
+
+		if (substr($data,0,4)=="\xA5\x5A\x0B\x05") {
+			// TODO prüfen ob für mich
+			
 			$this->SendDebug("RD-Start","0xA55A",0);
+			switch substr($data,0,5) {
+
+			case "\x00":
+				break;
+				$this->sendDebug("RD SW","0",0);
+			case "\x10":
+				$this->sendDebug("RD SW","10",0);
+				break;
+			case "\x30":
+				$this->sendDebug("RD SW","30",0);
+				break;
+			case "\x50":
+				$this->sendDebug("RD SW","50",0);
+				break;
+			case "\x70":
+				$this->sendDebug("RD SW","70",0);
+				break;
+			
+				
+			}
 			
 		}
 	}
