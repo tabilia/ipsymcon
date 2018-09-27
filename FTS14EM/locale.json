@@ -1,8 +1,6 @@
 {
    "translations": {
 	"de": {
-		"DeviceID" : "Geräte-ID",
-		"Switch0" : "Taster 0"
-	}
+		"DeviceID" : "Geräte-ID"
    }
 }   
