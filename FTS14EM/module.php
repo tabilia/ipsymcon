@@ -9,5 +9,16 @@
 	}
 
 
+	
+	public function ApplyChanges()
+	{
+	  parent::ApplyChanges();
+	}
+
+	
+	public function Update()
+	{
+	}
+
   }
 ?>

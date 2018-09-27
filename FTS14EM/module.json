@@ -1,4 +1,5 @@
-": "{89625B8F-7F45-4D21-9442-9EEC3CAC4A2D}",
+{
+	"id": "{5bdf5701-88d9-40dc-b06f-e23f0f4b40af}",
 	"name": "FTS14EM",
 	"type": 3,
 	"vendor": "Eltako",
@@ -9,5 +10,5 @@
 	"parentRequirements": [],
 	"childRequirements": [],
 	"implemented": [],
-	"prefix": "FTS"
-	}
+	"prefix": "ENO"
+}
