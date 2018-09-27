@@ -36,9 +36,7 @@
 	public function ApplyChanges()
 	{
 	  parent::ApplyChanges();
-#	  $this->SetReceiveDataFilter(".*");	
-#	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
-#	  $this->SendDebug("FTS14","applychanges".$this->GetConfigurationForParent(),0);
+	  $this->SetReceiveDataFilter("\xA5\x5A\x0B\x05.*");	
 	}
 
 
