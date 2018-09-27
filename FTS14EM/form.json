@@ -14,8 +14,7 @@
 				{"caption" : "60","value": 60 },
 				{"caption" : "70","value": 70 },
 				{"caption" : "80","value": 80 },
-				{"caption" : "90","value": 90 },
-
+				{"caption" : "90","value": 90 }
 			],
 			"caption": "Upper Rotary Switch"
 		},
