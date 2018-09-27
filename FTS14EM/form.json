@@ -2,8 +2,9 @@
 	"elements":
 	[
 		{
-			"name": "upperRotarySwitch",
+			"name": "UpperRotarySwitch",
 			"type": "Select",
+			"caption": "Upper Rotary Switch",
 			"options" : [
 				{"caption" : "0","value": 0 },
 				{"caption" : "10","value": 10 },
@@ -15,14 +16,33 @@
 				{"caption" : "70","value": 70 },
 				{"caption" : "80","value": 80 },
 				{"caption" : "90","value": 90 }
-			],
-			"caption": "Upper Rotary Switch"
+			]
+		},
+
+		{
+			"name": "LowerRotarySwitch",
+			"type": "Select",
+			"caption": "Lower Rotary Switch",
+			"options" : [
+				{"caption" : "1","value": 1 },
+				{"caption" : "101","value": 101 },
+				{"caption" : "201","value": 201 },
+				{"caption" : "301","value": 301 },
+				{"caption" : "401","value": 401 }
+			]
 		},
 		{
-			"name": "lowerRotarySwitch",
-			"type": "NumberSpinner",
-			"caption": "Lower Rotary Switch"
+			"name": "SwitchType",
+			"type": "Select",
+			"caption": "Switch Type",
+			"options" : [
+				{"caption" : "UT","value": 0 },
+				{"caption" : "RT","value": 1  }
+			]
 		},
+
+
+
 
 		{ 
 			"type": "SelectInstance", 

@@ -7,6 +7,7 @@
 	  // erzeugt benötigte variablen etc.
 	  $this->RegisterPropertyInteger("UpperRotarySwitch", 0);
 	  $this->RegisterPropertyInteger("LowerRotarySwitch", 0);
+	  $this->RegisterPropertyInteger("SwitchType", 0);
 	  $this->RegisterPropertyInteger("PropertyInstanceID", 0);
 	  
 
