@@ -7,8 +7,8 @@
 	[
 		"FTS14-EM"
 	],
-	"parentRequirements": ["{48909406-A2B9-4990-934F-28B9A80CD079}"],
+	"parentRequirements": ["{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}"],
 	"childRequirements": [],
-	"implemented": ["{48909406-A2B9-4990-934F-28B9A80CD079}"],
+	"implemented": ["{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}"],
 	"prefix": "ENO"
 }
