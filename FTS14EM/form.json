@@ -9,6 +9,6 @@
 		{ 
 			"type": "SelectInstance", 
 			"name": "PropertyInstanceID", 
-			"caption": "Target" }i
+			"caption": "Target" }
 	]
 }
