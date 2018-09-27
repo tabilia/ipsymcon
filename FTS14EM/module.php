@@ -66,7 +66,7 @@
 
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
-			&& (substr($data,8,3) =="\x00\x00\x".$myaddr1)
+			&& (substr($data,8,3) =="\x00\x00\x".$myaddr2)
 
 			) {
 			// TODO prüfen ob für mich

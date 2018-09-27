@@ -24,11 +24,11 @@
 			"type": "Select",
 			"caption": "Lower Rotary Switch",
 			"options" : [
-				{"caption" : "1","value": 0 },
-				{"caption" : "101","value": 100 },
-				{"caption" : "201","value": 200 },
-				{"caption" : "301","value": 300 },
-				{"caption" : "401","value": 400 }
+				{"caption" : "1","value": 10 },
+				{"caption" : "101","value": 11 },
+				{"caption" : "201","value": 12 },
+				{"caption" : "301","value": 13 },
+				{"caption" : "401","value": 14 }
 			]
 		},
 		{
