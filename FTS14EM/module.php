@@ -35,8 +35,9 @@
 	
 	public function ApplyChanges()
 	{
-	  parent::ApplyChanges();
-	  $this->SetReceiveDataFilter(".*".utf8_encode("\xA5\x5A\x0B\x05").".*");	
+		parent::ApplyChanges();
+		//TODO: Data Filter um Performance zu sparen hinzufügen
+	 # $this->SetReceiveDataFilter(".*".utf8_encode("\xA5\x5A\x0B\x05").".*");	
 	}
 
 
