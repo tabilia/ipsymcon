@@ -49,10 +49,10 @@
 		$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
 
 		$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),0,2),0);
-		$this->SendDebug("RD 0",substr(utf8_decode($data->Buffer),1,2),0);
+		$this->SendDebug("RD 1",substr(utf8_decode($data->Buffer),1,2),0);
 		
-		if ($data->Buffer[0]==0xA5) {
-			$this->SendDebug("RD-Start","0xA5",0);
+		if (substr($data->Buffer,0,2)==0xA55A) {
+			$this->SendDebug("RD-Start","0xA55A",0);
 			
 		}
 	}
