@@ -1,0 +1,15 @@
+{
+	"id": "{{EDD2C9FC-ADF6-4FDF-87BA-74DF8F64F7C5}}",
+	"name": "AutoDimmerNightControl",
+	"type": 3,
+	"vendor": "",
+	"aliases": 
+	[
+		"DimmerNightControl"
+	],
+	"parentRequirements": [],
+	"childRequirements": [],
+	"implemented": [],
+	"prefix": "DNC"
+
+}
