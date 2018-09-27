@@ -20,7 +20,11 @@
       	  $this->RegisterVariableBoolean("Switch6","Switch6");
       	  $this->RegisterVariableBoolean("Switch7","Switch7");
 	  $this->RegisterVariableBoolean("Switch8","Switch8");
-      	  $this->RegisterVariableBoolean("Switch9","Switch9");
+	  $this->RegisterVariableBoolean("Switch9","Switch9");
+
+
+	  $this->ConnectParent("{48909406-A2B9-4990-934F-28B9A80CD079}");
+
 	}
 
 
