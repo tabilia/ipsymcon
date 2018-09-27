@@ -50,16 +50,8 @@
 		// Empfangene Daten vom I/O
 
 		$data = json_decode($JSONString);
-		//$this->SendDebug("FTS14EM RD","ReceiveData aufgerufen", 0);
-		#IPS_LogMessage("FTS14EM-RD", utf8_decode($data->Buffer));
-	//	$this->SendDebug("ReceiveData",utf8_decode($data->Buffer),0);
-
-
 		$data=utf8_decode($data->Buffer);
-
 	
-
-		//$myaddr = $this->ReadPropertyInteger("UpperRotarySwitch") + $this->ReadPropertyInteger("LowerRotarySwitch");  
 		$myaddr1 = $this->ReadPropertyInteger("UpperRotarySwitch");
 		$myaddr2 = $this->ReadPropertyInteger("LowerRotarySwitch");
 		switch ($myaddr2) {
@@ -80,20 +72,6 @@
 			  break;
 		}
 
-
-		/*if (substr($data,0,4)=="\xA5\x5A\x0B\x05")
-		{
-			$this->sendDebug("MyADDR1",$myaddr1,0);
-			$this->sendDebug("MyADDR2",$myaddr2,0);
-			$this->sendDebug("MyADDR-1S",substr($data,8,3),0);
-			$this->sendDebug("MyADDR-1M","\x00\x00".$myaddr2,0);
-			$this->sendDebug("MyADDR-2S",substr($data,12,1),0);
-			$this->sendDebug("MyADDR-2M",$myaddr1,0);
-
-
-			$this->sendDebug("ADDR-Data",$data,0);
-		}	
-		 */
 		// Enocean Switch Message for one of my Addresses
 		if ((substr($data,0,4)=="\xA5\x5A\x0B\x05")
 			&& (substr($data,8,3) == "\x00\x00".$myaddr2)
@@ -102,53 +80,42 @@
 			// hinteren Adressteil prüfen
 			if ($myaddr1 == $telegramAddr[0]) {
 
-/*
-				$this->sendDebug("RD HEX",$telegramAddr0,0);
-			
-$help1=$telegramAddr0[0];*/
 				$switch=$telegramAddr0[1];
-			/*	$this->sendDebug("RD HEX1",$help1,0);
-				$this->sendDebug("RD HEX2",$help2,0);
- */						
-			
-
-
-
-				$this->SendDebug("RD-Start","0xA55A",0);
+				
 				switch (substr($data,4,1)) {
 	
-				case "\x00":
-					break;
-					$this->sendDebug("RD SW","0",0);
-				case "\x10":
+					case "\x00":
+						$this->sendDebug("RD SW","0",0);
+						break;
+					case "\x10":
 					// SW4 + SW8
-					$this->sendDebug("RD SW","10 / Switch ".$switch,0);
-					if ($switch==4) { $this->SetSwitch(4);}
-					else if ($switch==8) { $this->SetSwitch(8);}
-					break;
-				case "\x30":
-					$this->sendDebug("RD SW","30 / Switch ".$switch,0);
-					//SW3 + SW7
-					if ($switch==3) { $this->SetSwitch(3);}
-					else if ($switch==7) { $this->SetSwitch(7);}
-					break;
-				case "\x50":
-					//SW2 + SW6 + SW9
-					$this->sendDebug("RD SW","50 / SW ".$switch,0);
-					if ($switch==2) { $this->SetSwitch(2);}
-					else if ($switch==6) { $this->SetSwitch(6);}
-					else if ($switch==9) { $this->SetSwitch(9);}
-					break;
-				case "\x70":
-					//SW1 + SW5 SW10
-					$this->sendDebug("RD SW","70 / Switch ".$switch,0);
-					if ($switch==1) { $this->SetSwitch(1);}
-					else if ($switch==5) { $this->SetSwitch(5);}
-					else if ($switch==10) { $this->SetSwitch(10);}
-					break;
-				default:
-					$this->sendDebug("RD SW Def",substr($data,4,1),0);
-					break;
+						$this->sendDebug("RD SW","10 / Switch ".$switch,0);
+						if ($switch==4) { $this->SetSwitch(4);}
+						else if ($switch==8) { $this->SetSwitch(8);}
+						break;
+					case "\x30":
+						$this->sendDebug("RD SW","30 / Switch ".$switch,0);
+						//SW3 + SW7
+						if ($switch==3) { $this->SetSwitch(3);}
+						else if ($switch==7) { $this->SetSwitch(7);}
+						break;
+					case "\x50":
+						//SW2 + SW6 + SW9
+						$this->sendDebug("RD SW","50 / SW ".$switch,0);
+						if ($switch==2) { $this->SetSwitch(2);}
+						else if ($switch==6) { $this->SetSwitch(6);}
+						else if ($switch==9) { $this->SetSwitch(9);}
+						break;
+					case "\x70":
+						//SW1 + SW5 SW10
+						$this->sendDebug("RD SW","70 / Switch ".$switch,0);
+						if ($switch==1) { $this->SetSwitch(1);}
+						else if ($switch==5) { $this->SetSwitch(5);}
+						else if ($switch==10) { $this->SetSwitch(10);}
+						break;
+					default:
+						$this->sendDebug("RD SW Def",substr($data,4,1),0);
+						break;
 				}
 			}
 		}
