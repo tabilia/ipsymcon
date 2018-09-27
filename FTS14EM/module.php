@@ -43,7 +43,7 @@
 	private function SetSwitch($switchid) {
 		$switchid--;
 		$this->sendDebug("SW","Set SW ".$switch." = true ",0)
-		SetValueInteger($this->GetIDForIdent("switch".$switchid), true);
+		SetValueBoolean($this->GetIDForIdent("switch".$switchid), true);
 	}
 	
 	public function ReceiveData($JSONString) {
