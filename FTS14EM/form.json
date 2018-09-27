@@ -6,6 +6,17 @@
 			"type": "NumberSpinner", 
 			"caption": "DeviceID"
 		},
+		{
+			"name": "upperRotarySwitch",
+			"type": "NumberSpinner",
+			"caption": "Upper Rotary Switch"
+		},
+		{
+			"name": "lowerRotarySwitch",
+			"type": "NumberSpinner",
+			"caption": "Lower Rotary Switch"
+		},
+
 		{ 
 			"type": "SelectInstance", 
 			"name": "PropertyInstanceID", 
