@@ -83,7 +83,7 @@
 			$this->sendDebug("MyADDR1",$myaddr1,0);
 			$this->sendDebug("MyADDR2",$myaddr2,0);
 			$this->sendDebug("MyADDR-1S",substr($data,8,3),0);
-			$this->sendDebug("MyADDR-1M","\x00\x00".$myaddr2,0)i;
+			$this->sendDebug("MyADDR-1M","\x00\x00".$myaddr2,0);
 			$this->sendDebug("MyADDR-2S",substr($data,12,1),0);
 			$this->sendDebug("MyADDR-2M",$myaddr1,0);
 
