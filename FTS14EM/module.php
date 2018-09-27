@@ -40,11 +40,20 @@
 	}
 
 
+	
 	private function SetSwitch($switchid) {
 		$switchid--;
 		$this->sendDebug("SW","Set SW ".$switchid." = true ",0);
 		SetValueBoolean($this->GetIDForIdent("Switch".$switchid), true);
 	}
+
+	private function ReleaseSwitch($switchid) {
+		$switchid--;
+		$this->sendDebug("SW","Release SW ".$switchid." = false ",0);
+		SetValueBoolean($this->GetIDForIdent("Switch".$switchid), false);
+	}
+
+
 	
 	public function ReceiveData($JSONString) {
 		// Empfangene Daten vom I/O
@@ -86,6 +95,7 @@
 	
 					case "\x00":
 						$this->sendDebug("RD SW","0  / SW ".$switch,0);
+						$this->ReleaseSwitch($switch);
 						break;
 					case "\x10":
 					// SW4 + SW8
