@@ -9,6 +9,6 @@
 	],
 	"parentRequirements": ["{48909406-A2B9-4990-934F-28B9A80CD079}"],
 	"childRequirements": [],
-	"implemented": [],
+	"implemented": ["{48909406-A2B9-4990-934F-28B9A80CD079}"],
 	"prefix": "ENO"
 }
