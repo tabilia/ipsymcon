@@ -102,7 +102,7 @@
 			
 			$this->sendDebug("RD HEX",$telegramAddr0,0);
 			$help = $telegramAddr0 & 0xF0;
-			$help2 = $telegramAddr0 & 0xF0;
+			$help2 = $telegramAddr0 & 0x0F;
 			$this->sendDebug("RD HEX1",$help,0);
 			$this->sendDebug("RD HEX2",$help2,0);
 						
