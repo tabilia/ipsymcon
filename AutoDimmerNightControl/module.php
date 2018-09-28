@@ -20,10 +20,10 @@
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
 
-	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(1);");
+	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(\$_IPS['TARGET']);");
 	}
 
-	public function Stop($a) {
+	public function Stop() {
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		ENO_DimSet($DimmerID,0);
