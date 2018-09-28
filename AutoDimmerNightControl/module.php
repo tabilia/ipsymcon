@@ -28,20 +28,32 @@
 		parent::ApplyChanges();
 	}
 
+	private function isNight() {
+	//prüft ob nacht ist
+		//$this->ReadPropertyInteger("");
+
+		return 1;
+	}
 
 	public function MotionDetectorEnableLight()
 	{
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=50;
-		ENO_DimSet($DimmerID, 20);
-		#	SetValue($DimmerID, $value); 
+		//$now=date("H");
+
+		if (isNight()==1) {
+		  $brightness=$this->ReadPropertyInteger("DimmerValueNight");
+		} else {
+		  $brightness=$this->ReadPropertyInteger("DimmerValueDay");
+		}
+		ENO_DimSet($DimmerID, $brightness);
 	}
+
 	public function SwitchEnableLight()
 	{
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
-	#	SetValue($DimmerID, $value); 
 	}
 		
 	
