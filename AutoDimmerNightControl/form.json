@@ -37,7 +37,17 @@
 		{ 
 			"type": "NumberSpinner", 
 			"name": "DimmerValueNight", 
-			"caption": "Dimmer Value Night" }
+			"caption": "Dimmer Value Night" },
+		{ 
+			"type": "NumberSpinner", 
+			"name": "Switch Timer", 
+			"caption": "Switch Timer" },
+		{ 
+			"type": "NumberSpinner", 
+			"name": "MotionDetectorTimer", 
+			"caption": "MotionDetector Timer" }
+
+
 
 	]
 }

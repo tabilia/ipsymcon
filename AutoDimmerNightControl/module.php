@@ -16,7 +16,8 @@
 	  $this->RegisterPropertyInteger("DimmerValueDay", 0);
 	  $this->RegisterPropertyInteger("NightStartTime", 0);
 	  $this->RegisterPropertyInteger("DimmerValueNight", 0);
-
+	  $this->RegisterPropertyInteger("MotionDetectorTimer",60);
+	  $this->RegisterPropertyInteger("SwitchTimer",60);
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
 
