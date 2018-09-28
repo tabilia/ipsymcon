@@ -32,7 +32,7 @@
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
-		$this->SetTimerInterval("turn-dimmer-off", 0 )
+	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
 	}
 	private function isNight() {
 	//prüft ob nacht ist
