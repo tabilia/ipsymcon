@@ -33,13 +33,15 @@
 	{
 		$DimmerID=34737;
 		$value=50;
-		SetValue($DimmerID, $value); 
+		ENO_DimSet($DimmerID, 20);
+		#	SetValue($DimmerID, $value); 
 	}
 	public function SwitchEnableLight()
 	{
 		$DimmerID=34737;
 		$value=100;
-		SetValue($DimmerID, $value); 
+		ENO_DimSet($DimmerID, 100);
+	#	SetValue($DimmerID, $value); 
 	}
 		
 	
