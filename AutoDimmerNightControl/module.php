@@ -26,7 +26,8 @@
 	public function Stop() {
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
-	  	ENO_DimSet($DimmerID,0);
+		ENO_DimSet($DimmerID,0);
+		$this->SendDebug("Stop","Dimmer aus!",0);
 	}
 	
 	public function ApplyChanges()
@@ -56,6 +57,7 @@
 		ENO_DimSet($DimmerID, $brightness);
 		$seconds=5;
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
+		$this->SendDebug("MotionDetector","Start Light",0);
 	}
 	public function SwitchEnableLight()
 	{
@@ -64,6 +66,7 @@
 		ENO_DimSet($DimmerID, 100);
 		$seconds=5;
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
+		$this->SendDebug("Switch","Start Light",0);
 	}
 		
 	
