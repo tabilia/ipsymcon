@@ -18,7 +18,11 @@
 	  $this->RegisterPropertyInteger("DimmerValueNight", 0);
 
 	 # $this->RegisterPropertyInteger("", 0);
-	 # $this->RegisterPropertyInteger("", 0);
+	  # $this->RegisterPropertyInteger("", 0);
+	  #
+	  #
+	  #
+	  $this->RegisterTimer("set-dimmer-off", 0, "$this->DisableLight()");
 	}
 
 
@@ -35,6 +39,12 @@
 		return 1;
 	}
 
+	private function DisableLight() {
+	    $DimmerID=$this->ReadPropertyInteger("DimmerID");
+	    ENO_DimSet($DimmerID, 0);
+	    $this->SetTimerInterval("turn-dimmer-off", 0);
+	}
+
 	public function MotionDetectorEnableLight()
 	{
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
@@ -47,6 +57,8 @@
 		  $brightness=$this->ReadPropertyInteger("DimmerValueDay");
 		}
 		ENO_DimSet($DimmerID, $brightness);
+		$milliseconds=10000;
+		$this->SetTimerInterval("turn-dimmer-off", $milliseconds);
 	}
 
 	public function SwitchEnableLight()
