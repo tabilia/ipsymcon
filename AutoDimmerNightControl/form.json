@@ -2,13 +2,13 @@
 	"elements":
 	[
 		{ 
-			"type": "SelectInstance", 
+			"type": "SelectVariable", 
 			"name": "MotionDetectorID", 
 			"caption": "Motion Detector ID" },
 			
 	
 		{ 
-			"type": "SelectInstance", 
+			"type": "SelectVariable", 
 			"name": "SwitchID", 
 			"caption": "Switch ID" },
 			
