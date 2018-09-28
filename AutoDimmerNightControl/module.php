@@ -24,7 +24,7 @@
 	  #
 
 	  $DimmerID=$this->ReadPropertyInteger("DimmerID");
-	  $this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0)");
+	  $this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0);");
 	}
 
 
