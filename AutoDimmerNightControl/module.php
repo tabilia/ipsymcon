@@ -57,6 +57,7 @@
 		//$this->SetTimerInterval("turn-dimmer-off", $milliseconds);
 		$dimmerofftime==10000;
 		sleep($dimmerofftime);
+		ENO_DimSet($DimmerID, 0);
 	}
 	public function SwitchEnableLight()
 	{
@@ -65,6 +66,7 @@
 		ENO_DimSet($DimmerID, 100);
 		$dimmerofftime==10000;
 		sleep($dimmerofftime);
+		ENO_DimSet($DimmerID,0);
 	}
 		
 	
