@@ -23,7 +23,7 @@
 	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop();");
 	}
 
-	public function Stop() {
+	public function Stop(void) {
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		ENO_DimSet($DimmerID,0);
