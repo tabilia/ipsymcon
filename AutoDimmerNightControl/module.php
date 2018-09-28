@@ -31,14 +31,14 @@
 
 	public function MotionDetectorEnableLight()
 	{
-		$DimmerID=34737;
+		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=50;
 		ENO_DimSet($DimmerID, 20);
 		#	SetValue($DimmerID, $value); 
 	}
 	public function SwitchEnableLight()
 	{
-		$DimmerID=34737;
+		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
 	#	SetValue($DimmerID, $value); 
