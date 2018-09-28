@@ -41,7 +41,7 @@
 		$value=50;
 		//$now=date("H");
 
-		if (isNight()==1) {
+		if ($this->isNight()==1){
 		  $brightness=$this->ReadPropertyInteger("DimmerValueNight");
 		} else {
 		  $brightness=$this->ReadPropertyInteger("DimmerValueDay");
