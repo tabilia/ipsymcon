@@ -19,12 +19,9 @@
 
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
-	  #
-	  #
-	  #
 
-	  //$DimmerID=$this->ReadPropertyInteger("DimmerID");
-	  //$this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0);");
+	  $DimmerID=$this->ReadPropertyInteger("DimmerID");
+	  $this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0);");
 	}
 
 
@@ -55,18 +52,18 @@
 		}
 		ENO_DimSet($DimmerID, $brightness);
 		//$this->SetTimerInterval("turn-dimmer-off", $milliseconds);
-		$dimmerofftime=10;
-		sleep($dimmerofftime);
-		ENO_DimSet($DimmerID, 0);
+		#$dimmerofftime=10;
+		#sleep($dimmerofftime);
+		#ENO_DimSet($DimmerID, 0);
 	}
 	public function SwitchEnableLight()
 	{
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
-		$dimmerofftime=10;
-		sleep($dimmerofftime);
-		ENO_DimSet($DimmerID,0);
+		#$dimmerofftime=10;
+		#sleep($dimmerofftime);
+		#ENO_DimSet($DimmerID,0);
 	}
 		
 	
