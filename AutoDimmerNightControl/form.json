@@ -40,7 +40,7 @@
 			"caption": "Dimmer Value Night" },
 		{ 
 			"type": "NumberSpinner", 
-			"name": "Switch Timer", 
+			"name": "SwitchTimer", 
 			"caption": "Switch Timer" },
 		{ 
 			"type": "NumberSpinner", 
