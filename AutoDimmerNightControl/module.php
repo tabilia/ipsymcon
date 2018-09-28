@@ -23,8 +23,8 @@
 	  #
 	  #
 
-	    $DimmerID=$this->ReadPropertyInteger("DimmerID");
-	  $this->RegisterTimer("set-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0)");
+	  $DimmerID=$this->ReadPropertyInteger("DimmerID");
+	  $this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0)");
 	}
 
 
@@ -32,6 +32,8 @@
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
+	 	$DimmerID=$this->ReadPropertyInteger("DimmerID");
+	  	$this->RegisterTimer("turn-dimmer-off", 0, "ENO_DimSet(".$DimmerID.",0)");
 	}
 
 	private function isNight() {
