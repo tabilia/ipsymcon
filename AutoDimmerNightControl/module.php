@@ -56,7 +56,7 @@
 		  $brightness=$this->ReadPropertyInteger("DimmerValueDay");
 		}
 		ENO_DimSet($DimmerID, $brightness);
-		$seconds=ReadPropertyInteger("MotionDetectorTimer");
+		$seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
 		$this->SendDebug("MotionDetector","Start Light",0);
 	}
@@ -65,7 +65,7 @@
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
-		$seconds=ReadPropertyInteger("SwitchTimer");
+		$seconds=$this->ReadPropertyInteger("SwitchTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
 		$this->SendDebug("Switch","Start Light",0);
 	}
