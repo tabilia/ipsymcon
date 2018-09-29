@@ -52,11 +52,11 @@ class AutoDimmerNightControl extends IPSModule
 		if (json_decode($Message)==10603) {
 		//Variablenänderung
 
-		$SenderID=json_decode($SenderID);
+		#$SenderID=json_decode($SenderID);
 		
 		$this->SendDebug("Sender",$SenderID,0);
 		
-		$Data=json_decode($Data);
+		#$Data=json_decode($Data);
 		$this->SendDebug("Data",utf8_decode($data->Buffer),0);
 		}		
 	
