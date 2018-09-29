@@ -85,8 +85,8 @@ class AutoDimmerNightControl extends IPSModule
 		//$now=date("H");
 
 		//if (
-		
 	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
+	$this->SendDebug("VAR",GetValue($variablenID),0);	
 		if (GetValue($variablenID)<>"Switch") {
 		  if ($this->isNight()==1){
 		    $brightness=$this->ReadPropertyInteger("DimmerValueNight");
