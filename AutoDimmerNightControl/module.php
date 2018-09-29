@@ -35,8 +35,8 @@
 	{
 		parent::ApplyChanges();
 	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
-		if($this->ReadPropertyInteger("MontionDetectorID") > 0) {
-			$this->RegisterMessage($this->ReadPropertyInteger("MontionDetectorID"), IM_CHANGESTATUS);
+		if($this->ReadPropertyInteger("MotionDetectorID") > 0) {
+			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), IM_CHANGESTATUS);
 		}
 	
 	
