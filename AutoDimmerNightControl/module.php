@@ -75,8 +75,26 @@ class AutoDimmerNightControl extends IPSModule
 	private function isNight() {
 	//prüft ob nacht ist
 		//$this->ReadPropertyInteger("");
+	  $night=0;
+	  $night = $this->ReadPropertyInteger("NightStartTime");
+	  $day = $this->ReadPropertyInteger("DayStartTime");
+	  $hour = now("G");
+	  
+	  //$night=$night+24;
 
-		return 1;
+	  if ($night < $day ) {
+             $night = $night+24;
+	  }
+
+	  if ($hour >= $day && $hour < $night) {
+		    $night=0;
+	  } else {$night=1;}
+	  /*
+night	2 26 	4     6  23 6
+day	7 	10    5   6 4
+now	4	23    8   1 5
+	   */
+	  return $night;
 	}
 
 
