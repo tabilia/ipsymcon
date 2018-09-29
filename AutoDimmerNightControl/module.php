@@ -89,11 +89,6 @@ class AutoDimmerNightControl extends IPSModule
 	  if ($hour >= $day && $hour < $night) {
 		    $night=0;
 	  } else {$night=1;}
-	  /*
-night	2 26 	4     6  23 6     23
-day	7 	10    5   6 4     7
-now	4	23    8   1 5     13
-	   */
 	  return $night;
 	}
 
