@@ -1,13 +1,6 @@
 <?
-//These constants are predefined with IP-Symcon 5.0+
-if(!defined("IPS_BASE"))
-define("IPS_BASE", 10000);
-if(!defined("IPS_INSTANCEMESSAGE"))
-define("IPS_INSTANCEMESSAGE", IPS_BASE + 500);
-if(!defined("IM_CHANGESTATUS"))
-define("IM_CHANGESTATUS", IPS_INSTANCEMESSAGE + 5);
 
-  class AutoDimmerNightControl extends IPSModule
+class AutoDimmerNightControl extends IPSModule
   {
 	public function Create()
 	{
@@ -45,10 +38,10 @@ define("IM_CHANGESTATUS", IPS_INSTANCEMESSAGE + 5);
 	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
 	
 		if($this->ReadPropertyInteger("MotionDetectorID") > 0) {
-			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), IM_CHANGESTATUS);
+			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), 600);
 		}
 		if($this->ReadPropertyInteger("SwitchID") > 0) {
-			$this->RegisterMessage($this->ReadPropertyInteger("SwitchID"), IM_CHANGESTATUS);
+			$this->RegisterMessage($this->ReadPropertyInteger("SwitchID"), 600);
 		}
 	
 	}
