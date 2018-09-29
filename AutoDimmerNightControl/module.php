@@ -49,12 +49,16 @@ class AutoDimmerNightControl extends IPSModule
 	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
 	{	
 		$this->SendDebug("Message","Event:".$TimeStamp." Sender: ".json_decode($SenderID)." MSG: ".json_decode($Message)." Data: ".serialize($Data),0); 		
-		
+		if (json_decode($Message)==10603) {
+		//Variablenänderung
+
 		$SenderID=json_decode($SenderID);
-		$SenderID=$SenderID['i'];
+		
 		$this->SendDebug("Sender",$SenderID,0);
-
-
+		
+		$Data=$json_decode($Data);
+		$this->SendDebug("Data",$Data,0);
+		}		
 	
 	}		
 
