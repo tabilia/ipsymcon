@@ -21,18 +21,20 @@ class AutoDimmerNightControl extends IPSModule
 	  $this->RegisterPropertyInteger("SwitchTimer",60);
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
-	  $variablenID = $this->RegisterVariableString("Status", "Status", "");
-	  SetValue($variablenID,"");
+	  #$variablenID = $this->RegisterVariableString("Status", "Status", "");
+	  #SetValue($variablenID,"");
 	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(\$_IPS['TARGET']);");
+	  $this->SetBuffer("StartEvent","");
 	}
 
 	public function Stop() {
-	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
+	  	#$variablenID = $this->RegisterVariableString("Status", "Status", "");
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		ENO_DimSet($DimmerID,0);
 		$this->SendDebug("Stop","Dimmer aus!",0);
-		SetValue($variablenID,"");
+	//	SetValue($variablenID,"");
+		$this->SetBuffer("StartEvent","");
 	}
 	
 	public function ApplyChanges()
@@ -85,9 +87,9 @@ class AutoDimmerNightControl extends IPSModule
 		//$now=date("H");
 
 		//if (
-	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
-	$this->SendDebug("VAR",GetValue($variablenID),0);	
-		if (GetValue($variablenID)<>"Switch") {
+	  	#$variablenID = $this->RegisterVariableString("Status", "Status", "");
+		#$this->SendDebug("VAR",GetValue($variablenID),0);	
+		if (GetBuffer("StartEvent")<>"Switch") {
 		  if ($this->isNight()==1){
 		    $brightness=$this->ReadPropertyInteger("DimmerValueNight");
 		  } else {
@@ -97,7 +99,7 @@ class AutoDimmerNightControl extends IPSModule
 		  $seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
 		  $this->SetTimerInterval("OffTimer", $seconds * 1000);
 		  $this->SendDebug("MotionDetector","Start Light for ".$seconds."s",0);
-		  SetValue ($VariablenID, "MotionDetector");
+		  $this->SetBuffer("StartEvent","MotionDetector");
 		} else {
 		// Licht ist bereits an wegen gedrücktem Switch. 
 			// TODO: entscheiden was zu tun ist
@@ -114,7 +116,7 @@ class AutoDimmerNightControl extends IPSModule
 		$seconds=$this->ReadPropertyInteger("SwitchTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
 		$this->SendDebug("Switch","Start Light for ".$seconds."s",0);
-		SetValue ($VariablenID, "Switch");
+		$this->SetBuffer("StartEvent","Switch");
 	}
 		
 	
