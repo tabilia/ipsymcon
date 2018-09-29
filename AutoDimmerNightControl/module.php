@@ -21,7 +21,7 @@ class AutoDimmerNightControl extends IPSModule
 	  $this->RegisterPropertyInteger("SwitchTimer",60);
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
-	  $this->RegisterVariableInteger("Status", "Status", "");
+	  $variableID = $this->RegisterVariableString("Status", "Status", "");
 	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(\$_IPS['TARGET']);");
 	}
 
@@ -84,8 +84,7 @@ class AutoDimmerNightControl extends IPSModule
 		$value=50;
 		//$now=date("H");
 
-			
-
+		//if (
 		if ($this->isNight()==1){
 		  $brightness=$this->ReadPropertyInteger("DimmerValueNight");
 		} else {
@@ -95,6 +94,7 @@ class AutoDimmerNightControl extends IPSModule
 		$seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
 		$this->SendDebug("MotionDetector","Start Light",0);
+		SetValue ($VariablenID, "MotionDetector");
 	}
 
 	public function SwitchEnableLight()
@@ -105,6 +105,7 @@ class AutoDimmerNightControl extends IPSModule
 		$seconds=$this->ReadPropertyInteger("SwitchTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
 		$this->SendDebug("Switch","Start Light",0);
+		SetValue ($VariablenID, "Switch");
 	}
 		
 	
