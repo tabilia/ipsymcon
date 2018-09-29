@@ -35,7 +35,22 @@
 	{
 		parent::ApplyChanges();
 	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
+		if($this->ReadPropertyInteger("MontionDetectorID") > 0) {
+			$this->RegisterMessage($this->ReadPropertyInteger("MontionDetectorID"), IM_CHANGESTATUS);
+		}
+	
+	
 	}
+
+	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
+	{	
+		$this->SendDebug("Event:",$TimeStamp. " Sender: ".$senderID. " MSG: ".$Message." Data: ".$Data); 		
+		//IPS_LogMessage("MessageSink", "New message!!!");									
+	}		
+
+
+
+
 	private function isNight() {
 	//prüft ob nacht ist
 		//$this->ReadPropertyInteger("");
