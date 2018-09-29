@@ -96,7 +96,7 @@ class AutoDimmerNightControl extends IPSModule
 		  ENO_DimSet($DimmerID, $brightness);
 		  $seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
 		  $this->SetTimerInterval("OffTimer", $seconds * 1000);
-		  $this->SendDebug("MotionDetector","Start Light",0);
+		  $this->SendDebug("MotionDetector","Start Light for ".$seconds."s",0);
 		  SetValue ($VariablenID, "MotionDetector");
 		} else {
 		// Licht ist bereits an wegen gedrücktem Switch. 
@@ -113,7 +113,7 @@ class AutoDimmerNightControl extends IPSModule
 		ENO_DimSet($DimmerID, 100);
 		$seconds=$this->ReadPropertyInteger("SwitchTimer");
 		$this->SetTimerInterval("OffTimer", $seconds * 1000);
-		$this->SendDebug("Switch","Start Light",0);
+		$this->SendDebug("Switch","Start Light for ".$seconds."s",0);
 		SetValue ($VariablenID, "Switch");
 	}
 		
