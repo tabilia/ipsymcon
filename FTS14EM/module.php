@@ -88,7 +88,7 @@
 		) {
 			$telegramAddr0 = bin2hex(substr($data,11,1));
 			// hinteren Adressteil prüfen
-			if ($myaddr1 == $telegramAddr[0]) {
+			if ($myaddr1 == $telegramAddr0[0]) {
 
 
 
