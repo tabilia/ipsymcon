@@ -38,10 +38,10 @@ class AutoDimmerNightControl extends IPSModule
 	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
 	
 		if($this->ReadPropertyInteger("MotionDetectorID") > 0) {
-			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), 600);
+			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), 10603);
 		}
 		if($this->ReadPropertyInteger("SwitchID") > 0) {
-			$this->RegisterMessage($this->ReadPropertyInteger("SwitchID"), 600);
+			$this->RegisterMessage($this->ReadPropertyInteger("SwitchID"), 10603);
 		}
 	
 	}
