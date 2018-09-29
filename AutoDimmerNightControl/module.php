@@ -109,7 +109,6 @@ class AutoDimmerNightControl extends IPSModule
 
 	public function SwitchEnableLight()
 	{
-	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
