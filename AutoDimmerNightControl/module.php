@@ -22,14 +22,17 @@ class AutoDimmerNightControl extends IPSModule
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
 	  $variableID = $this->RegisterVariableString("Status", "Status", "");
+	  SetValue($variableID,"");
 	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(\$_IPS['TARGET']);");
 	}
 
 	public function Stop() {
+	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		ENO_DimSet($DimmerID,0);
 		$this->SendDebug("Stop","Dimmer aus!",0);
+		SetValue($variableID,"");
 	}
 	
 	public function ApplyChanges()
@@ -58,9 +61,6 @@ class AutoDimmerNightControl extends IPSModule
 		   $this->SendDebug("Keypress","Switch",0);
  		   $this->SwitchEnableLight();
 		}
-		#$this->SendDebug("Sender",$SenderID,0);
-		
-		#$this->SendDebug("Data",var_export($Data,true),0);
 		}		
 	
 	}		
@@ -85,20 +85,29 @@ class AutoDimmerNightControl extends IPSModule
 		//$now=date("H");
 
 		//if (
-		if ($this->isNight()==1){
-		  $brightness=$this->ReadPropertyInteger("DimmerValueNight");
+		
+	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
+		if (GetValue($variableID)<>"Switch") {
+		  if ($this->isNight()==1){
+		    $brightness=$this->ReadPropertyInteger("DimmerValueNight");
+		  } else {
+		    $brightness=$this->ReadPropertyInteger("DimmerValueDay");
+	  	  }
+		  ENO_DimSet($DimmerID, $brightness);
+		  $seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
+		  $this->SetTimerInterval("OffTimer", $seconds * 1000);
+		  $this->SendDebug("MotionDetector","Start Light",0);
+		  SetValue ($VariablenID, "MotionDetector");
 		} else {
-		  $brightness=$this->ReadPropertyInteger("DimmerValueDay");
-		}
-		ENO_DimSet($DimmerID, $brightness);
-		$seconds=$this->ReadPropertyInteger("MotionDetectorTimer");
-		$this->SetTimerInterval("OffTimer", $seconds * 1000);
-		$this->SendDebug("MotionDetector","Start Light",0);
-		SetValue ($VariablenID, "MotionDetector");
+		// Licht ist bereits an wegen gedrücktem Switch. 
+			// TODO: entscheiden was zu tun ist
+		  $this->SetTimerInterval("OffTimer", $seconds * 1000);
+		}	
 	}
 
 	public function SwitchEnableLight()
 	{
+	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
