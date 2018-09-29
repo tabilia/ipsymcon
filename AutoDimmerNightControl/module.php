@@ -104,7 +104,7 @@ class AutoDimmerNightControl extends IPSModule
 		// Licht ist bereits an wegen gedrücktem Switch. 
 			// TODO: entscheiden was zu tun ist
 		  $this->SetTimerInterval("OffTimer", $seconds * 1000);
-		  $this->SendDebug("MotionDetector","Renew Timer for ".$seconds."s",0)
+		  $this->SendDebug("MotionDetector","Renew Timer for ".$seconds."s",0);
 		}	
 	}
 
