@@ -21,18 +21,18 @@ class AutoDimmerNightControl extends IPSModule
 	  $this->RegisterPropertyInteger("SwitchTimer",60);
 	 # $this->RegisterPropertyInteger("", 0);
 	  # $this->RegisterPropertyInteger("", 0);
-	  $variableID = $this->RegisterVariableString("Status", "Status", "");
-	  SetValue($variableID,"");
+	  $variablenID = $this->RegisterVariableString("Status", "Status", "");
+	  SetValue($variablenID,"");
 	  $this->RegisterTimer("OffTimer", 0, "DNC_Stop(\$_IPS['TARGET']);");
 	}
 
 	public function Stop() {
-	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
+	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
 		$this->SetTimerInterval("OffTimer", 0);
 	  	$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		ENO_DimSet($DimmerID,0);
 		$this->SendDebug("Stop","Dimmer aus!",0);
-		SetValue($variableID,"");
+		SetValue($variablenID,"");
 	}
 	
 	public function ApplyChanges()
@@ -86,8 +86,8 @@ class AutoDimmerNightControl extends IPSModule
 
 		//if (
 		
-	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
-		if (GetValue($variableID)<>"Switch") {
+	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
+		if (GetValue($variablenID)<>"Switch") {
 		  if ($this->isNight()==1){
 		    $brightness=$this->ReadPropertyInteger("DimmerValueNight");
 		  } else {
@@ -107,7 +107,7 @@ class AutoDimmerNightControl extends IPSModule
 
 	public function SwitchEnableLight()
 	{
-	  	$variableID = $this->RegisterVariableString("Status", "Status", "");
+	  	$variablenID = $this->RegisterVariableString("Status", "Status", "");
 		$DimmerID=$this->ReadPropertyInteger("DimmerID");
 		$value=100;
 		ENO_DimSet($DimmerID, 100);
