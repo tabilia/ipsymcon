@@ -78,7 +78,7 @@ class AutoDimmerNightControl extends IPSModule
 	  $night=0;
 	  $night = $this->ReadPropertyInteger("NightStartTime");
 	  $day = $this->ReadPropertyInteger("DayStartTime");
-	  $hour = now("G");
+	  $hour = date("G");
 	  
 	  //$night=$night+24;
 
