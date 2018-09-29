@@ -56,7 +56,7 @@ class AutoDimmerNightControl extends IPSModule
 		
 		$this->SendDebug("Sender",$SenderID,0);
 		
-		$Data=$json_decode($Data);
+		$Data=json_decode($Data);
 		$this->SendDebug("Data",$Data,0);
 		}		
 	
