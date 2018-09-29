@@ -48,7 +48,7 @@ class AutoDimmerNightControl extends IPSModule
 
 	public function MessageSink($TimeStamp, $SenderID, $Message, $Data)
 	{	
-		$this->SendDebug("Event:",$TimeStamp. " Sender: ".$senderID. " MSG: ".$Message." Data: ".$Data); 		
+		$this->SendDebug("Event:",$TimeStamp. " Sender: ".$SenderID. " MSG: ".$Message." Data: ".$Data); 		
 		//IPS_LogMessage("MessageSink", "New message!!!");									
 	}		
 
