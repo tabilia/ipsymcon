@@ -35,10 +35,13 @@
 	{
 		parent::ApplyChanges();
 	#	$this->SetTimerInterval("turn-dimmer-off", 0 )
+	
 		if($this->ReadPropertyInteger("MotionDetectorID") > 0) {
 			$this->RegisterMessage($this->ReadPropertyInteger("MotionDetectorID"), IM_CHANGESTATUS);
 		}
-	
+		if($this->ReadPropertyInteger("SwitchID") > 0) {
+			$this->RegisterMessage($this->ReadPropertyInteger("SwitchID"), IM_CHANGESTATUS);
+		}
 	
 	}
 
@@ -48,7 +51,9 @@
 		//IPS_LogMessage("MessageSink", "New message!!!");									
 	}		
 
-
+	public function Dump() {
+      	   return $this->GetMessageList();
+	}
 
 
 	private function isNight() {
