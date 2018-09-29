@@ -52,9 +52,9 @@ class AutoDimmerNightControl extends IPSModule
 		if ($Message==10603 && $Data[0]==true) {
 		//Variablenänderung
 		if($this->ReadPropertyInteger("MotionDetectorID") == $SenderID) {
-		   MotionDetectorEnableLight();
+		   $this->MotionDetectorEnableLight();
 		} else if ($this->ReadPropertyInteger("SwitchID") == $SenderID) {
- 		   SwitchEnableLight();
+ 		   $this->SwitchEnableLight();
 		}
 		#$this->SendDebug("Sender",$SenderID,0);
 		
