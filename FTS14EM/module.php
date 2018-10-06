@@ -26,8 +26,8 @@
 		$this->ReleaseSwitch($i);
 	  }
 	
-//	  $this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
-	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
+	  $this->ConnectParent("{A52FEFE9-7858-4B8E-A96E-26E15CB944F7}");
+//	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
 
 	}
 
@@ -36,7 +36,7 @@
 	public function ApplyChanges()
 	{
 		parent::ApplyChanges();
-	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
+//	  $this->ConnectParent("{AC6C6E74-C797-40B3-BA82-F135D941D1A2}");
 		//TODO: Data Filter um Performance zu sparen hinzufügen
 	 # $this->SetReceiveDataFilter(".*".utf8_encode("\xA5\x5A\x0B\x05").".*");	
 	}
