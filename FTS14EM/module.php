@@ -101,31 +101,31 @@ $this->SendDebug ('receive', $JSONString,0);
 				switch (substr($data,4,1)) {
 	
 					case "\x00":
-						$this->sendDebug("RD SW","0  / SW ".$switch,0);
+						$this->sendDebug("RD SW","0  / SW ".$switch-1,0);
 						$this->ReleaseSwitch($switch);
 						break;
 					case "\x10":
 					// SW4 + SW8
-						$this->sendDebug("RD SW","10 / Switch ".$switch,0);
+						$this->sendDebug("RD SW","10 / Switch ".$switch-1,0);
 						if ($switch==4) { $this->SetSwitch(4);}
 						else if ($switch==8) { $this->SetSwitch(8);}
 						break;
 					case "\x30":
-						$this->sendDebug("RD SW","30 / Switch ".$switch,0);
+						$this->sendDebug("RD SW","30 / Switch ".$switch-1,0);
 						//SW3 + SW7
 						if ($switch==3) { $this->SetSwitch(3);}
 						else if ($switch==7) { $this->SetSwitch(7);}
 						break;
 					case "\x50":
 						//SW2 + SW6 + SW9
-						$this->sendDebug("RD SW","50 / SW ".$switch,0);
+						$this->sendDebug("RD SW","50 / SW ".$switch-1,0);
 						if ($switch==2) { $this->SetSwitch(2);}
 						else if ($switch==6) { $this->SetSwitch(6);}
 						else if ($switch==9) { $this->SetSwitch(9);}
 						break;
 					case "\x70":
 						//SW1 + SW5 SW10
-						$this->sendDebug("RD SW","70 / Switch ".$switch,0);
+						$this->sendDebug("RD SW","70 / Switch ".$switch-1,0);
 						if ($switch==1) { $this->SetSwitch(1);}
 						else if ($switch==5) { $this->SetSwitch(5);}
 						else if ($switch==10) { $this->SetSwitch(10);}
