@@ -109,12 +109,14 @@ $this->SendDebug ('receive', $JSONString,0);
 						$this->sendDebug("RD SW","10 / Switch ".$switch2,0);
 						if ($switch==4) { $this->SetSwitch(4);}
 						else if ($switch==8) { $this->SetSwitch(8);}
+						else { $this->sendDebug("RD SW","10 / Switch ".$switch2." not in List and not processed.",0);}
 						break;
 					case "\x30":
 						$this->sendDebug("RD SW","30 / Switch ".$switch2,0);
 						//SW3 + SW7
 						if ($switch==3) { $this->SetSwitch(3);}
 						else if ($switch==7) { $this->SetSwitch(7);}
+						else { $this->sendDebug("RD SW","30 / Switch ".$switch2." not in List and not processed.",0);}
 						break;
 					case "\x50":
 						//SW2 + SW6 + SW9
@@ -122,6 +124,7 @@ $this->SendDebug ('receive', $JSONString,0);
 						if ($switch==2) { $this->SetSwitch(2);}
 						else if ($switch==6) { $this->SetSwitch(6);}
 						else if ($switch==9) { $this->SetSwitch(9);}
+						else { $this->sendDebug("RD SW","50 / Switch ".$switch2." not in List and not processed.",0);}
 						break;
 					case "\x70":
 						//SW1 + SW5 SW10
@@ -130,6 +133,7 @@ $this->SendDebug ('receive', $JSONString,0);
 						else if ($switch==5) { $this->SetSwitch(5);}
 						else if ($switch==10) { $this->SetSwitch(10);}
 						else if ($switch==9) { $this->SetSwitch(9);}
+						else { $this->sendDebug("RD SW","70 / Switch ".$switch2." not in List and not processed.",0);}
 						break;
 					default:
 						$this->sendDebug("RD SW Def",substr($data,4,1),0);
