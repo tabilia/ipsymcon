@@ -98,8 +98,8 @@ $this->SendDebug ('receive', $JSONString,0);
 
 				$switch=$telegramAddr0[1];
 				
+				$switch2 = $switch-1;
 				switch (substr($data,4,1)) {
-					$switch2 = $switch-1;
 					case "\x00":
 						$this->sendDebug("RD SW","0  / SW ".$switch2,0);
 						$this->ReleaseSwitch($switch);
